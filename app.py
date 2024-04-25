@@ -8,7 +8,7 @@ import matplotlib.dates as mdates
 from datetime import datetime
 
 # Streamlit application title
-st.title('API Clicks Fetcher')
+st.title('API Programme - Clicks Fetcher')
 
 # Authorization token
 auth_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIxODUyZmZmNi02N2RlLTRiNjYtYmIwMy01NDJlY2Q4YmZmNzMiLCJhZG0iOnRydWUsImlhdCI6MTcxNDAyMzA5NiwiZXhwIjoxNzE0MTA5NDk2LCJhdWQiOiJwbGF0bzowLjAuMSIsImlzcyI6InZhcnNpdHktbGl2ZSJ9.N2b4Gymi_LC79320WNE1-1b9pVPt5Qty-rScVEsgRQA'
