@@ -41,8 +41,7 @@ else:
 
      # Mapping of titles to their respective pids
     pid_mapping = {
-        "Basics of Stock Market - Testing": "1f53f728-b165-4042-8297-64fbb97f4c73",
-        "Tax Planning for Salaried Individuals": "207e1ddb-70d7-4adf-9a8c-17c4a79d7547",
+     #   "Tax Planning for Salaried Individuals": "207e1ddb-70d7-4adf-9a8c-17c4a79d7547",
         "Basics of Fundamental Analysis": "37a3bf71-9f89-44dc-af65-870ad64835aa",
         "Basics of Stock Market": "3f2973a2-b6f2-4c18-ba1d-4c48346937b6",
         "Basics of Options": "40a39a1b-bda0-4d54-82f8-2d453ad3187f",
