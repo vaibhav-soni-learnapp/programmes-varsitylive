@@ -23,6 +23,13 @@ def fetch_clicks(url, event_name):
     else:
         return pd.DataFrame()
 
+# Default selections
+default_events = [
+    "apply_now", "curriculum_day1", "curriculum_day2", "date_filter",
+    "date_selection", "join_session", "language_filter", "language_selection",
+    "popup_cancel", "programme_card", "signin_initated"
+]
+
 # Fetch event names for dropdown
 all_clicks_url = "https://oracle.varsitylive.in/admin/web-analytics/click/all"
 all_clicks_response = fetch_clicks(all_clicks_url, "initial_load")
@@ -30,7 +37,7 @@ if all_clicks_response.empty:
     st.error("Error fetching event names.")
 else:
     event_names = all_clicks_response['eventName'].unique()
-    selected_event_names = st.multiselect('Select Event Name', event_names)
+    selected_event_names = st.multiselect('Select Event Name', event_names, default=default_events)
 
     # Date input for fromDate and toDate
     fromDate = st.date_input("From Date", date.today())
