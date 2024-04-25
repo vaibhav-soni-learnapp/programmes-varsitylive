@@ -39,13 +39,30 @@ else:
     event_names = all_clicks_response['eventName'].unique()
     selected_event_names = st.multiselect('Select Event Name', event_names, default=default_events)
 
+     # Mapping of titles to their respective pids
+pid_mapping = {
+    "Basics of Stock Market - Testing": "1f53f728-b165-4042-8297-64fbb97f4c73",
+    "Tax Planning for Salaried Individuals": "207e1ddb-70d7-4adf-9a8c-17c4a79d7547",
+    "Basics of Fundamental Analysis": "37a3bf71-9f89-44dc-af65-870ad64835aa",
+    "Basics of Stock Market": "3f2973a2-b6f2-4c18-ba1d-4c48346937b6",
+    "Basics of Options": "40a39a1b-bda0-4d54-82f8-2d453ad3187f",
+    "Basics of Personal Finance": "a4c8f1f0-da64-48d2-8432-dd42d79e67c6",
+    "Basics of Technical Analysis": "f4747acb-e1f7-458a-94bb-1a154d256795"
+}
+
+# User interface to select a programme by title
+selected_title = st.selectbox('Select Programme Title', list(pid_mapping.keys()))
+
+# Retrieve the pid from the selected title
+selected_pid = pid_mapping[selected_title]
+    
     # Date input for fromDate and toDate
     fromDate = st.date_input("From Date", date.today())
     toDate = st.date_input("To Date", date.today())
 
     # Dynamic URLs and event names for the APIs based on selected event names and date range
     tasks = [
-        (f"https://oracle.varsitylive.in/admin/web-analytics/click/{event_name}/3f2973a2-b6f2-4c18-ba1d-4c48346937b6/range?fromDate={fromDate}&toDate={toDate}", event_name)
+        (f"https://oracle.varsitylive.in/admin/web-analytics/click/{event_name}/{selected_pid}/range?fromDate={fromDate}&toDate={toDate}", event_name)
         for event_name in selected_event_names
     ]
 
