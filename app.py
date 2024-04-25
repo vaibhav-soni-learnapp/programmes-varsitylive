@@ -68,7 +68,7 @@ else:
 
     # Dynamic URLs and event names for the APIs based on selected event names and date range
     tasks = [
-        (f"https://oracle.varsitylive.in/admin/web-analytics/click/{event_name}/{selected_pids}/range?fromDate={fromDate}&toDate={toDate}", event_name)
+        (f"https://oracle.varsitylive.in/admin/web-analytics/click/{event_name}/{pid}/range?fromDate={fromDate}&toDate={toDate}", event_name)
         for pid in selected_pids for event_name in selected_event_names
        # for event_name in selected_event_names   //added later
     ]
