@@ -51,10 +51,16 @@ else:
     }
 
     # User interface to select a programme by title
-    selected_title = st.selectbox('Select Programme Title', list(pid_mapping.keys()))
+    #selected_title = st.selectbox('Select Programme Title', list(pid_mapping.keys()))     //added later
 
     # Retrieve the pid from the selected title
-    selected_pid = pid_mapping[selected_title]
+    #selected_pid = pid_mapping[selected_title]   //added later
+
+    # User interface to select multiple programmes by title
+    selected_titles = st.multiselect('Select Programme Titles', list(pid_mapping.keys()))
+    
+    # Retrieve the pids from the selected titles
+    selected_pids = [pid_mapping[title] for title in selected_titles]
     
     # Date input for fromDate and toDate
     fromDate = st.date_input("From Date", date.today())
@@ -63,7 +69,8 @@ else:
     # Dynamic URLs and event names for the APIs based on selected event names and date range
     tasks = [
         (f"https://oracle.varsitylive.in/admin/web-analytics/click/{event_name}/{selected_pid}/range?fromDate={fromDate}&toDate={toDate}", event_name)
-        for event_name in selected_event_names
+        for pid in selected_pids for event_name in selected_event_names
+       # for event_name in selected_event_names   //added later
     ]
 
     # Fetch and display data concurrently for the selected event names and date range
