@@ -11,7 +11,7 @@ from datetime import datetime
 st.title('API Programme - Clicks Fetcher')
 
 # Authorization token
-auth_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIxODUyZmZmNi02N2RlLTRiNjYtYmIwMy01NDJlY2Q4YmZmNzMiLCJhZG0iOnRydWUsImlhdCI6MTcxNDU1NjIyMCwiZXhwIjoxNzE0NjQyNjIwLCJhdWQiOiJwbGF0bzowLjAuMSIsImlzcyI6InZhcnNpdHktbGl2ZSJ9.JWM1QGDjvpQ6Dcl44B2k-J42hBiNET-450lF2EqYHMY'
+auth_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiIxODUyZmZmNi02N2RlLTRiNjYtYmIwMy01NDJlY2Q4YmZmNzMiLCJhZG0iOnRydWUsImlhdCI6MTcxNDY0MjU5MSwiZXhwIjoxNzE0NzI4OTkxLCJhdWQiOiJwbGF0bzowLjAuMSIsImlzcyI6InZhcnNpdHktbGl2ZSJ9.qCXRtC38BFCwvqEWO8FDax5aQO_uvGCwekEk8kiZc14'
 headers = {'Authorization': auth_token}
 
 # Function to fetch clicks data
