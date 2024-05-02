@@ -38,8 +38,8 @@ if all_clicks_response.empty:
 else:
     event_names = all_clicks_response['eventName'].unique()
     
-# Create two columns for the date inputs
-col1, col2, col3 = st.columns(3)
+    # Create two columns for the date inputs
+    col1, col2, col3 = st.columns(3)
 
     # Input for Click in the first column
     with col1:
