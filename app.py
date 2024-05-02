@@ -61,9 +61,17 @@ else:
     # Retrieve the pids from the selected titles
     selected_pids = [pid_mapping[title] for title in selected_titles]
     
-    # Date input for fromDate and toDate
-    fromDate = st.date_input("From Date", date.today())
-    toDate = st.date_input("To Date", date.today())
+        # Create two columns for the date inputs
+    col1, col2 = st.columns(2)
+    
+    # Date input for fromDate in the first column
+    with col1:
+        fromDate = st.date_input("From Date", date.today())
+    
+    # Date input for toDate in the second column
+    with col2:
+        toDate = st.date_input("To Date", date.today())
+
 # Submit button to trigger the data fetching
 if st.button('Fetch Data'):
     # Dynamic URLs and event names for the APIs based on selected event names and date range
