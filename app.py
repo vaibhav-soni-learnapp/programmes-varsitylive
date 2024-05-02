@@ -38,18 +38,20 @@ if all_clicks_response.empty:
 else:
     event_names = all_clicks_response['eventName'].unique()
     
-    # Create two columns for the date inputs
+   # Create three columns for the input selections
     col1, col2, col3 = st.columns(3)
-
-    # Input for Click in the first column
+    
+    # Input for Event Name in the first column
     with col1:
         eventName = st.selectbox("Event Name", ('All', 'Click', 'Scroll'))
-    # Input for Click in the second column
+    
+    # Input for Identifier Type in the second column
     with col2:
         identifierType = st.selectbox("Identifier Type", ('Program', 'genericid', 'faq category', 'faq question'))
-    # Input for Click in the in the third column
+    
+    # Input for Duration in the third column
     with col3:
-        duration = st.selectbox("Duration", date.today())
+        duration = st.selectbox("Duration", ('Today', '7 Day', '1 Month', 'Custom'))
     
     selected_event_names = st.multiselect('Select Event Name', event_names, default=default_events)
 
