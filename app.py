@@ -64,7 +64,8 @@ else:
     # Date input for fromDate and toDate
     fromDate = st.date_input("From Date", date.today())
     toDate = st.date_input("To Date", date.today())
-
+# Submit button to trigger the data fetching
+if st.button('Fetch Data'):
     # Dynamic URLs and event names for the APIs based on selected event names and date range
     tasks = [
         (f"https://oracle.varsitylive.in/admin/web-analytics/click/{event_name}/{pid}/range?fromDate={fromDate}&toDate={toDate}", event_name)
