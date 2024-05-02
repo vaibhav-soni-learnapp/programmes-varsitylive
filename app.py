@@ -127,3 +127,5 @@ if st.button('Fetch Data'):
 
         # Display the plot in the Streamlit app
         st.pyplot(plt)
+        st.dataframe(pivot_table)
+
