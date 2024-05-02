@@ -84,7 +84,7 @@ if st.button('Fetch Data'):
 
         # Display the data in a single table with event names as column headers
         pivot_table = combined_data.pivot_table(index='date', columns='event_name', values='clicks', aggfunc='sum').fillna(0)
-        st.table(pivot_table)
+       # st.table(pivot_table)
 
         # Plotting all events in a single chart
         plt.figure(figsize=(10, 6))
