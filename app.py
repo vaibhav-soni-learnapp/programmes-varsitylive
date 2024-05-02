@@ -41,15 +41,15 @@ else:
 # Create two columns for the date inputs
 col1, col2, col3 = st.columns(3)
 
-# Input for Click in the first column
-with col1:
-    eventName = st.selectbox("Event Name", ('All', 'Click', 'Scroll'))
-# Input for Click in the second column
-with col2:
-    identifierType = st.selectbox("Identifier Type", ('Program', 'genericid', 'faq category', 'faq question'))
-# Input for Click in the in the second column
-with col3:
-    duration = st.selectbox("Duration", date.today())
+    # Input for Click in the first column
+    with col1:
+        eventName = st.selectbox("Event Name", ('All', 'Click', 'Scroll'))
+    # Input for Click in the second column
+    with col2:
+        identifierType = st.selectbox("Identifier Type", ('Program', 'genericid', 'faq category', 'faq question'))
+    # Input for Click in the in the third column
+    with col3:
+        duration = st.selectbox("Duration", date.today())
     
     selected_event_names = st.multiselect('Select Event Name', event_names, default=default_events)
 
